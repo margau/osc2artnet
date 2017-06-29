@@ -11,7 +11,7 @@ Start index.js:
 
 Send OSC-Messages between 0 and 255 to Port 57121.
 
-Adress/Channel for OSC:
+Address/Channel for OSC:
 ```/o2a/(universe)/(channel)```
 
 Universe in decimal!
