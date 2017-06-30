@@ -1,25 +1,68 @@
 # osc2artnet
-Transfers OSC-Messages into Artnet Channel-Values
+This script can be used to Transfer OSC data into ArtNet data.
 
 ## Usage
 
-Install with
+Install:
+
 ```npm install osc2artnet```
 
-Start index.js:
-```node index.js```
+Start node_modules/osc2artnet/index.js:
 
-Send OSC-Messages between 0 and 255 to Port 57121.
+```node node_modules/osc2artnet/index.js```
+
+Now send OSC-Messages between 0 and 255 to Port 57121 (either IP of the host running osc2artnet or broadcast address like 255.255.255.255).
+
 
 Address/Channel for OSC:
+
 ```/o2a/(universe)/(channel)```
 
-Universe in decimal!
+
+The prefix o2a ist customizable in the index.js file.
+
+The universe consists of two parts:
+
 Subnet: first 4 bits
+
 Universe: last 4 bits
 
 Example: Subnet 1 (0x1) DMX-Universe 0 (0x0) = 0x10 = 0d16 = Dezimal 16
 
 Channel: int between 0 and 255
 
-Please feel free to contribute!
+## Tested with
+[TouchOSC](https://hexler.net/software/touchosc) on iOS/Android and [DMX Control 3](http://www.dmxcontrol.de/dmxcontrol3/funktionen.html)
+
+Useful for debugging: [The ArtNetominator](http://www.lightjams.com/artnetominator/)
+
+
+## Please feel free to contribute and improve osc2artnet!
+
+## License
+
+MIT License
+
+Copyright (c) 2017 margau
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## Credits
+
+Art-Net™ Designed by and Copyright [Artistic Licence Holdings Ltd.](http://www.artisticlicence.com/)
