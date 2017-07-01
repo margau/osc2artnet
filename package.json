@@ -1,6 +1,6 @@
 {
 	"name": "osc2artnet",
-	"version": "0.1.0",
+	"version": "0.1.2",
 	"description": "Receives OSC-Packages (e.g. from TouchOSC) and translates them to ArtNet-DMX, e.g. for Light-Software remote control",
 	"dependencies": {
 		"artnet": "^1.3.2",
@@ -29,5 +29,9 @@
 		"name" : "Marvin Gaube", 
 		"email" : "dev@marvingaube.de", 
 		"url" : "https://marvingaube.de"
+	},
+	"bin": {
+		"osc2artnet": "./index.js",
+		"o2a": "./index.js"
 	}
 }
