@@ -43,8 +43,11 @@ Useful for debugging: [The ArtNetominator](http://www.lightjams.com/artnetominat
 
 ## Known Bugs
 
-**Installing on Linux says ```gyp WARN EACCESS``` and similar**
-This is a bug in a 3th part libary. Try to install using this command:
+**Installing on Linux says ```gyp WARN EACCESS``` and similar:**
+
+This is a bug in a 3th part libary. 
+
+Try to install using this command:
 
 ```npm install --unsafe-perm -g osc2artnet```
 
