@@ -3,13 +3,15 @@ This script can be used to Transfer OSC data into ArtNet data.
 
 ## Usage
 
-Install:
+Install osc2artnet globally:
 
-```npm install osc2artnet```
+```npm install -g osc2artnet```
 
 Start node_modules/osc2artnet/index.js:
 
 ```node node_modules/osc2artnet/index.js```
+
+Since version 0.2.0 you can use the command ```o2a``` or ```osc2artnet``` everywhere to run osc2artnet if you installed it with the ```-g``` switch.
 
 Now send OSC-Messages between 0 and 255 to Port 57121 (either IP of the host running osc2artnet or broadcast address like 255.255.255.255).
 

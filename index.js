@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var prefix= "o2a"; 
 // OSC: /o2a/(universe)/(channel) value
 /*
