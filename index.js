@@ -14,9 +14,8 @@ Example: Subnet 1 (0x1) DMX-Universe 0 (0x0) = 0x10 = 0d16 = Dezimal 16
 var dmxlib=require("dmxnet");
 //Create new dmxnet instance
 var dmxnet = new dmxlib.dmxnet({});
-//Create new Sender instance
-var sender=dmxnet.newSender({ip:"255.255.255.255",subnet:1,universe:0,net:0});
-
+//Create senders array for universes
+var senders=[];
 // Create an osc.js UDP Port listening
 var osc = require("osc");
 var udpPort = new osc.UDPPort({
@@ -36,6 +35,11 @@ udpPort.on("message", function (oscMsg) {
 		//Check for valid Universe
 		if ((typeof uri_parts[2] !== 'undefined')&&(parseInt(uri_parts[2])>=0 && parseInt(uri_parts[2])<256)) {
 			var universe=parseInt(uri_parts[2]);
+			if(senders[universe]===undefined) {
+				console.log("Create new Sender Object for universe "+universe);
+				//Create new Sender instance
+				senders[universe]=dmxnet.newSender({ip:"255.255.255.255",subuni:universe,net:0});
+			}
 			//Check for valid Channel
 			if ((typeof uri_parts[3] !== 'undefined')&&(parseInt(uri_parts[3])>=0 && parseInt(uri_parts[3])<512)) {
 				var channel=parseInt(uri_parts[3]);
@@ -43,9 +47,9 @@ udpPort.on("message", function (oscMsg) {
 				if ((typeof oscMsg.args[0].value !== 'undefined')&&(!isNaN(oscMsg.args[0].value))) {
 					var value=parseInt(oscMsg.args[0].value);
 					if(value>=0&&value<256) {
-						console.log("SendArtnet: Ch."+channel+" Val."+value);
+						console.log("SendArtnet: Universe "+universe+" Ch."+channel+" Val."+value);
 						//Send ArtNet
-						sender.setChannel(channel, value);
+						senders[universe].setChannel(channel, value);
 					}
 				}
 			}

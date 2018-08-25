@@ -3,7 +3,7 @@
 	"version": "0.2.1",
 	"description": "Receives OSC-Packages (e.g. from TouchOSC) and translates them to ArtNet-DMX, e.g. for Light-Software remote control",
 	"dependencies": {
-		"dmxnet": "*",
+		"dmxnet": "^0.1.2",
 		"osc": "^2.2.0"
 	},
 	"main": "index.js",
