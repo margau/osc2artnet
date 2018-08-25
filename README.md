@@ -6,6 +6,7 @@
 [![GitHub license](https://img.shields.io/github/license/margau/osc2artnet.svg)](https://github.com/margau/osc2artnet/blob/master/LICENSE)
 [![Github All Releases](https://img.shields.io/github/downloads/margau/osc2artnet/total.svg)](https://github.com/margau/osc2artnet)
 [![npm](https://img.shields.io/npm/dt/osc2artnet.svg)](https://github.com/margau/osc2artnet)
+[![npm](https://img.shields.io/npm/dm/osc2artnet.svg)](https://github.com/margau/osc2artnet)
 
 This script can be used to Transfer OSC data into ArtNet data.
 
