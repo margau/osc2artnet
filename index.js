@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var prefix= "o2a"; 
+var prefix= "o2a";
 // OSC: /o2a/(universe)/(channel) value
 /*
 Universe in decimal!
@@ -10,12 +10,13 @@ Universe: last 4 bits
 Example: Subnet 1 (0x1) DMX-Universe 0 (0x0) = 0x10 = 0d16 = Dezimal 16
 */
 //Set up Artnet
-var art_options = {
-	
-}
- 
-var artnet = require('artnet')(art_options);
- 
+//Load dmxnet as libary
+var dmxlib=require("dmxnet");
+//Create new dmxnet instance
+var dmxnet = new dmxlib.dmxnet({});
+//Create new Sender instance
+var sender=dmxnet.newSender({ip:"255.255.255.255",subnet:1,universe:0,net:0});
+
 // Create an osc.js UDP Port listening
 var osc = require("osc");
 var udpPort = new osc.UDPPort({
@@ -42,11 +43,9 @@ udpPort.on("message", function (oscMsg) {
 				if ((typeof oscMsg.args[0].value !== 'undefined')&&(!isNaN(oscMsg.args[0].value))) {
 					var value=parseInt(oscMsg.args[0].value);
 					if(value>=0&&value<256) {
-						console.log("SendArtnet: U"+universe+" Ch."+channel+" Val."+value);
+						console.log("SendArtnet: Ch."+channel+" Val."+value);
 						//Send ArtNet
-						artnet.set(universe, channel,  value, function (err, res) {
-						
-						});
+						sender.setChannel(channel, value);
 					}
 				}
 			}
