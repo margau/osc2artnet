@@ -8,11 +8,11 @@
 	},
 	"main": "index.js",
 	"repository": {
-	   "type": "git",
-	   "url": "https://github.com/margau/osc2artnet"
+		"type": "git",
+		"url": "https://github.com/margau/osc2artnet"
 	},
 	"bugs": {
-	   "url": "https://github.com/margau/osc2artnet/issues"
+		"url": "https://github.com/margau/osc2artnet/issues"
 	},
 	"keywords": [
 		"ArtNet",
@@ -25,10 +25,10 @@
 		"Translator"
 	],
 	"license": "MIT",
-	"author":{ 
-		"name" : "Marvin Gaube", 
-		"email" : "dev@marvingaube.de", 
-		"url" : "https://marvingaube.de"
+	"author": {
+		"name": "Marvin Gaube",
+		"email": "dev@marvingaube.de",
+		"url": "https://marvingaube.de"
 	},
 	"preferGlobal": "true",
 	"bin": {
