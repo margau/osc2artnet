@@ -1,6 +1,6 @@
 {
 	"name": "osc2artnet",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "Receives OSC-Packages (e.g. from TouchOSC) and translates them to ArtNet-DMX, e.g. for Light-Software remote control",
 	"dependencies": {
 		"dmxnet": "^0.1.2",
